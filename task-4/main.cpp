@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
 void textBoxGenerator(string& textForTextBox)
 {
     int amountOfAsterisk = 0;
+    int loopCondition = 1;
 
     amountOfAsterisk = textForTextBox.length() + 4;
 
@@ -11,17 +13,16 @@ void textBoxGenerator(string& textForTextBox)
     {
         cout << "*";
         amountOfAsterisk--;
+
+        if (amountOfAsterisk == 0 && loopCondition == 1)
+        {
+            cout << endl << "* " << textForTextBox << " *" << endl;
+
+            amountOfAsterisk = textForTextBox.length() + 4;
+            loopCondition--;
+        }
     }
-
-    cout << endl << "* " << textForTextBox << " *" << endl;
-
-    amountOfAsterisk = textForTextBox.length() + 4;
-
-    while (amountOfAsterisk >= 1)
-    {
-        cout << "*";
-        amountOfAsterisk--;
-    }
+}
 
 void main()
 {
