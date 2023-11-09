@@ -34,6 +34,60 @@ void main()
     //At the end of the program, it should also display the number of guesses
     //the player needed to guess the value in.     
 
-    cout << "Here is a random number between 1 and 10: " << random(1, 10) << endl;
-    cout << "And here is one between -3 and -5: " << random(-3, -5) << endl;
+    //cout << "Here is a random number between 1 and 10: " << random(1, 10) << endl;
+    //cout << "And here is one between -3 and -5: " << random(-3, -5) << endl;
+
+    int guess = 0; //the variables to be used
+    int randNum = random(1, 100);
+    int guessCounter = 0;
+    bool isGuessCorrect = false;
+
+    do //do while will run the code atleast once
+    {
+        cout << "Choose a number between 1 and 100: "; //asks the player for their guess
+        cin >> guess;
+
+        if (guess == randNum) //if the guess was correct the player wins
+        {
+            guessCounter++;
+            isGuessCorrect = true;
+            cout << "Well done, you have guessed the correct number in: " << guessCounter << endl;
+        }
+        else if (guess <= randNum + 2 && guess >= randNum - 2) //if the guess is inbtween these values and prints the outcome to the console
+        {
+            cout << "Boiling" << endl;
+            guessCounter++;
+        }
+        else if (guess <= randNum + 5 && guess >= randNum - 5)
+        {
+            cout << "Hot" << endl;
+            guessCounter++;
+        }
+        else if (guess <= randNum + 10 && guess >= randNum - 10)
+        {
+            cout << "Warmer" << endl;
+            guessCounter++;
+        }
+        else if (guess <= randNum + 15 && guess >= randNum - 15)
+        {
+            cout << "Warm" << endl;
+            guessCounter++;
+        }
+        else if (guess <= randNum + 25 && guess >= randNum - 25)
+        {
+            cout << "Cold" << endl;
+            guessCounter++;
+        }
+        else if (guess <= randNum + 35 && guess >= randNum - 35)
+        {
+            cout << "Colder" << endl;
+            guessCounter++;
+        }
+        else if (guess <= randNum + 100 && guess >= randNum - 100)
+        {
+            cout << "Freezing" << endl;
+            guessCounter++;
+        }
+
+    } while (isGuessCorrect == false);
 }

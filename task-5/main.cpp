@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
 void main()
 {
     //Make a program which converts any given string to sentence
@@ -28,33 +29,32 @@ void main()
     // - Uppercase: HELLO THIS IS ANOTHER SENTENCE. BLAH. SOMETHING ELSE.
     //
 
-    string sentenceToEdit = "";
+    string sentenceToEdit = ""; //creates the variables to be used
     string sentenceToUpper = "";
     string sentenceToLower = "";
-    bool doesNotConatainChar = true;
 
-    cout << "Please enter some text: ";
+    cout << "Please enter some text: "; //asks the user for text
     getline(cin, sentenceToEdit);
 
-    sentenceToUpper = sentenceToEdit;
+    sentenceToUpper = sentenceToEdit; //sets the variables to the inital input
     sentenceToLower = sentenceToEdit;
 
     for (int i = 0; i <= sentenceToEdit.length(); i++)
     {
-        if ((sentenceToEdit[i] >= 'a' && sentenceToEdit[i] <= 'z') || (sentenceToEdit[i] >= 'A' && sentenceToEdit[i] <= 'Z'))
+        if ((sentenceToEdit[i] >= 'a' && sentenceToEdit[i] <= 'z') || (sentenceToEdit[i] >= 'A' && sentenceToEdit[i] <= 'Z')) //checks if the character is a character not a symbol or number
         {
-            if (sentenceToEdit[0] == ' ')
+            if (sentenceToEdit[0] == ' ') //checks if the first charater is a space if so unpercases the second otherwise it upercases the first character
             {
                 sentenceToEdit[1] = toupper(sentenceToEdit[1]);
             }
-            else
+            else 
             {
                 sentenceToEdit[0] = toupper(sentenceToEdit[0]);
             }
 
-            for (int i = 0; i <= sentenceToEdit.length(); i++)
+            for (int i = 0; i <= sentenceToEdit.length(); i++) //goes though the sentence and checks if there is a . if so the next character is set to uppercase
             {
-                if (sentenceToEdit[i] == '.' && sentenceToEdit[i + 1] != ' ')
+                if (sentenceToEdit[i] == '.' && sentenceToEdit[i + 1] != ' ') //if here is a . and the first character is a space the next character is set to upercase
                 {
                     sentenceToEdit[i + 1] = toupper(sentenceToEdit[i + 1]);
                 }
@@ -64,24 +64,24 @@ void main()
                 }
             }
 
-            for (int i = 0; i <= sentenceToEdit.length(); i++)
+            for (int i = 0; i <= sentenceToEdit.length(); i++) //sets the whole sentence to uppercase
             {
                 sentenceToUpper[i] = toupper(sentenceToEdit[i]);
             }
 
-            for (int i = 0; i <= sentenceToEdit.length(); i++)
+            for (int i = 0; i <= sentenceToEdit.length(); i++) //sets the whole sentence to lowercase
             {
                 sentenceToLower[i] = tolower(sentenceToEdit[i]);
             }
 
-            cout << "Sentence case: " << sentenceToEdit << endl;
+            cout << "Sentence case: " << sentenceToEdit << endl; //prints the three sentences to the console
             cout << "Uppercase: " << sentenceToUpper << endl;
             cout << "Lowercase: " << sentenceToLower << endl;
 
             i = sentenceToEdit.length() + 1;
         }
 
-        if (doesNotConatainChar == true && i == sentenceToEdit.length())
+        if (i == sentenceToEdit.length()) //if the sentence did not conatin any alphebetical characters prints this to console instead
         {
             cout << "Sorry but your sentence does not contain alphebetical characters" << endl;
         }

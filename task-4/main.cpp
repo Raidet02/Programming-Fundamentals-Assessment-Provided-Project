@@ -2,24 +2,24 @@
 #include <string>
 using namespace std;
 
-void textBoxGenerator(string& textForTextBox)
+void textBoxGenerator(string& textForTextBox) //creates a function for making a textbox around a given input
 {
-    int amountOfAsterisk = 0;
+    int amountOfAsterisk = 0; //creaytes the variables needed
     int loopCondition = 1;
 
-    amountOfAsterisk = textForTextBox.length() + 4;
+    amountOfAsterisk = textForTextBox.length() + 4; //sets the amout of asterisks needed for the lines above and below to the correct amount
 
     while (amountOfAsterisk >= 1)
     {
         cout << "*";
         amountOfAsterisk--;
 
-        if (amountOfAsterisk == 0 && loopCondition == 1)
+        if (amountOfAsterisk == 0 && loopCondition == 1) //when the line above the text has been done the text is added between 2 asterisks
         {
             cout << endl << "* " << textForTextBox << " *" << endl;
 
             amountOfAsterisk = textForTextBox.length() + 4;
-            loopCondition--;
+            loopCondition--; //maks the loop only happen once then the line below is made
         }
     }
 }
@@ -48,10 +48,10 @@ void main()
     //Can you also expand this so that the box can be
     //shown with some padding? Or turn it into a function?
 
-    string textForTextBox = "";
+    string textForTextBox = ""; //variable to hold the text
 
     cout << "Please enter some text: ";
     getline(cin, textForTextBox);
 
-    textBoxGenerator(textForTextBox);
+    textBoxGenerator(textForTextBox); //plays the function and passes the text to it
 }
