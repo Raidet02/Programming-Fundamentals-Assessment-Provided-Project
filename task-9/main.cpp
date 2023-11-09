@@ -1,4 +1,8 @@
 #include <iostream>
+using namespace std;
+
+float GetDistanceBetweenPoints(float xComponantes, float yComponents);
+
 
 void main()
 {
@@ -28,7 +32,23 @@ void main()
         std::cout << std::endl;
     }
 
+    struct Vector2
+    {
+    public:
+        float xCoordinates = 0;
+        float yCoordinates = 0;
+    };
+
+    //GetDistanceBetweenPoints(xComponents, yComponents);
+
+
     //You should then build two Vector2s from the given x and y components, and show
     //the calculated distance between each point.
     
+}
+
+float GetDistanceBetweenPoints(float* xComponentes, float* yComponents)
+{
+    cout << xComponentes[0] << endl << xComponentes[1];
+
 }

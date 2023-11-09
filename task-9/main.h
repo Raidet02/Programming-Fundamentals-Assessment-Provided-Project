@@ -9,3 +9,11 @@
 //given in the article:
 //
 // - https://en.wikipedia.org/wiki/Euclidean_distance
+
+struct Vector2
+{
+public:
+	float xCoordinates = 0;
+	float yCoordinates = 0;
+};
+
