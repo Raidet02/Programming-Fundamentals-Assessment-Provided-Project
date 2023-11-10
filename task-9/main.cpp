@@ -28,16 +28,16 @@ void main()
         std::cout << std::endl;
     }
 
-    Vector2 vector2P;
+    Vector2 vector2P; //creates 2 instances of Vector2
     Vector2 vector2Q;
 
-    vector2P.xCoordinates = xComponents[0];
+    vector2P.xCoordinates = xComponents[0]; //assigns each instance the correct values
     vector2P.yCoordinates = yComponents[0];
 
     vector2Q.xCoordinates = xComponents[1];
     vector2Q.yCoordinates = yComponents[1];
 
-    cout << endl << "This is the Euclidean distance between the given points: " << GetDistanceBetweenPoints(vector2P, vector2Q) << endl;
+    cout << endl << "This is the Euclidean distance between the given points: " << GetDistanceBetweenPoints(vector2P, vector2Q) << endl; //runs GetDistanceBetweenPoints and prints the distance between to the console
 
     //You should then build two Vector2s from the given x and y components, and show
     //the calculated distance between each point.
