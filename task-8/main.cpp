@@ -96,7 +96,7 @@ void main()
     //
     // > exit
 
-    int inventorySize; //initiates all the varibales to be used 
+    int inventorySize = 0; //initiates all the varibales to be used 
     bool exit = false;
     string playerCommand = "";
     string playerCommandTemp = "";
