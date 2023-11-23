@@ -39,7 +39,7 @@ void main()
     sentenceToUpper = sentenceToEdit; //sets the variables to the inital input
     sentenceToLower = sentenceToEdit;
 
-    for (int i = 0; i <= sentenceToEdit.length(); i++)
+    for (int i = 0; i <= sentenceToEdit.length(); i++) //Goes through the sentence letter by letter
     {
         if ((sentenceToEdit[i] >= 'a' && sentenceToEdit[i] <= 'z') || (sentenceToEdit[i] >= 'A' && sentenceToEdit[i] <= 'Z')) //checks if the character is a character not a symbol or number
         {
@@ -64,14 +64,10 @@ void main()
                 }
             }
 
-            for (int i = 0; i <= sentenceToEdit.length(); i++) //sets the whole sentence to uppercase
+            for (int i = 0; i <= sentenceToEdit.length(); i++) 
             {
-                sentenceToUpper[i] = toupper(sentenceToEdit[i]);
-            }
-
-            for (int i = 0; i <= sentenceToEdit.length(); i++) //sets the whole sentence to lowercase
-            {
-                sentenceToLower[i] = tolower(sentenceToEdit[i]);
+                sentenceToUpper[i] = toupper(sentenceToEdit[i]); //sets the whole sentence to uppercase
+                sentenceToLower[i] = tolower(sentenceToEdit[i]); //sets the whole sentence to lowercase
             }
 
             cout << "Sentence case: " << sentenceToEdit << endl; //prints the three sentences to the console
